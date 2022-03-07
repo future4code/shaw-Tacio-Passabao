@@ -56,63 +56,84 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-  let maiorNumero = 0
-  let maiorDivisivelPorMenor
-  let diferenca = 0
-  if (num1 > maiorNumero){
-    maiorNumero = num1
-  } if (num2 > maiorNumero) {
-    maiorNumero = num2
+  let maiorNumero = 0;
+  let maiorDivisivelPorMenor;
+  let diferenca = 0;
+  if (num1 > maiorNumero) {
+    maiorNumero = num1;
+  }
+  if (num2 > maiorNumero) {
+    maiorNumero = num2;
   }
   if (num1 > num2) {
-    maiorDivisivelPorMenor = ((num1%num2) === 0)
+    maiorDivisivelPorMenor = num1 % num2 === 0;
   } else {
-    maiorDivisivelPorMenor = ((num2%num1) === 0)
+    maiorDivisivelPorMenor = num2 % num1 === 0;
   }
-  if (num1 > num2){
-    diferenca = (num1-num2)
+  if (num1 > num2) {
+    diferenca = num1 - num2;
   } else {
-    diferenca = (num2 - num1)
+    diferenca = num2 - num1;
   }
-  return {maiorNumero,maiorDivisivelPorMenor,diferenca}
+  return { maiorNumero, maiorDivisivelPorMenor, diferenca };
 }
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-  let numerosPares = []
-  if (n === 0){
-    return 0
-  } else {
-    for (i=0; i<n; i++){
-if (i % 2 == 0){
-numerosPares.push(i)
-}
+  let numerosPares = [];
+
+  for (i = 0; numerosPares.length < n; i++) {
+    if (i % 2 == 0) {
+      numerosPares.push(i);
     }
   }
-  return numerosPares
-} //voltar aqui depois
+
+  return numerosPares;
+}
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-  let triangulo
-  if (ladoA == ladoB && ladoB == ladoC){
-    triangulo = "Equilátero"
-  } else if (ladoA == ladoB || ladoB == ladoC || ladoA == ladoC){
-    triangulo = "Isósceles"
+  let triangulo;
+  if (ladoA == ladoB && ladoB == ladoC) {
+    triangulo = "Equilátero";
+  } else if (ladoA == ladoB || ladoB == ladoC || ladoA == ladoC) {
+    triangulo = "Isósceles";
   } else {
-    triangulo = "Escaleno"
+    triangulo = "Escaleno";
   }
-  return triangulo
+  return triangulo;
 }
 
 // EXERCÍCIO 10
-function retornaSegundoMaiorESegundoMenor(array) {}
+function retornaSegundoMaiorESegundoMenor(array) {
+  let arrayMaiorMenor = [];
+  if (array.length <= 2) {
+    return array;
+  } else {
+    let maiorNumero = Math.max.apply(Math, array);
+    array.splice(array.indexOf(maiorNumero), 1);
+    maiorNumero = Math.max.apply(Math, array);
+    arrayMaiorMenor.push(maiorNumero);
+
+    let menorNumero = Math.min.apply(Math, array);
+    array.splice(array.indexOf(menorNumero), 1);
+    menorNumero = Math.min.apply(Math, array);
+    arrayMaiorMenor.push(menorNumero);
+
+    return arrayMaiorMenor;
+  }
+}
 
 // EXERCÍCIO 11
-function retornaChamadaDeFilme(filme) {}
+function retornaChamadaDeFilme(filme) {
+  return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`;
+}
 
 // EXERCÍCIO 12
-function retornaPessoaAnonimizada(pessoa) {}
+function retornaPessoaAnonimizada(pessoa) {
+  pessoa.nome = "ANÔNIMO"
+  return pessoa
+}
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {}
