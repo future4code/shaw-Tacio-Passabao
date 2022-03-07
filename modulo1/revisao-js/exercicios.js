@@ -43,7 +43,16 @@ function retornaNumerosParesElevadosADois(array) {
 }
 
 // EXERCÍCIO 06
-function retornaMaiorNumero(array) {}
+function retornaMaiorNumero(array) {
+  let comparador = 0;
+  for (let valor of array) {
+    if (valor > comparador) {
+      comparador = valor;
+      console.log(comparador);
+    }
+  }
+  return comparador;
+}
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {}
