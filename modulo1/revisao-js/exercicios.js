@@ -131,12 +131,24 @@ function retornaChamadaDeFilme(filme) {
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-  pessoa.nome = "ANÔNIMO"
-  return pessoa
+  pessoa.nome = "ANÔNIMO";
+  return pessoa;
 }
 
 // EXERCÍCIO 13A
-function retornaPessoasAutorizadas(pessoas) {}
+function retornaPessoasAutorizadas(pessoas) {
+  let pessoasValidas = [];
+  for (let i = 0; i < pessoas.length; i++) {
+    if (
+      pessoas[i].idade > 14 &&
+      pessoas[i].idade < 60 &&
+      pessoas[i].altura > 1.5
+    ) {
+      pessoasValidas.push(pessoas[i]);
+    }
+  }
+  return pessoasValidas;
+}
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {}
