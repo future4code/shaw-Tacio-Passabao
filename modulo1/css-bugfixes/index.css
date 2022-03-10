@@ -114,6 +114,12 @@ td button {
     border-radius: 5px;
     color: black;
 }
+td button:hover{
+    background-color: darkgoldenrod;
+}
+td button:active{
+    color: white;
+}
 
 .container-do-search {
     margin-top: 20px;
