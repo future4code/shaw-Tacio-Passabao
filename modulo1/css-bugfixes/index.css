@@ -135,3 +135,9 @@ td button {
 #back-button:hover {
     background-color: #635a3d
 }
+
+#tabela img {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
