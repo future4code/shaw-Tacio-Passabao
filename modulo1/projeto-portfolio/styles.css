@@ -1,57 +1,88 @@
 body {
-    background-image: url(https://img.freepik.com/free-photo/blurred-cafe-background-coffee-shop-blur-background-with-bokeh_1484-1949.jpg?size=626&ext=jpg);
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: 100vw 100vh;
+  background-image: url(https://img.freepik.com/free-photo/blurred-cafe-background-coffee-shop-blur-background-with-bokeh_1484-1949.jpg?size=626&ext=jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 100vw 100vh;
 }
 
-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-    border: 4px solid black;
-    margin: 15px;
+.soueujpg {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  border: 4px solid black;
+  margin: 15px;
+  position: relative;
+  left: 1300px;
+  bottom: 210px;
 }
 
 #minha-fala {
-    position: relative;
-    left: 250px;
-    bottom: 200px;
-    width: 200px;
+  position: relative;
+  left: 1550px;
+  bottom: 420px;
+  width: 200px;
+  text-align: center;
 }
 
 .menu-bar {
-    list-style: none;
-    position: relative;
-    font-size: 25px;
-    background-color: black;
-    color: white;
-    letter-spacing: 1px;
-    width: 100%;
-    padding: 0px;
-    border-radius: 25px;
-    border: 1px solid #c0c0c0;
+  list-style: none;
+  position: relative;
+  font-size: 22px;
+  background-color: black;
+  color: white;
+  letter-spacing: 1px;
+  width: 100%;
+  padding: 0px;
+  border-radius: 25px;
+  border: 1px solid #c0c0c0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
 }
 
 .topnavbutton {
-    vertical-align: middle;
-    padding: 0px 120px 0px 120px;
-    color: white;
-    border-right: 1px solid white;
+  vertical-align: middle;
+  padding: 0px 120px 0px 120px;
+  color: white;
+  border-right: 1px solid white;
 }
 
-.header{
-    padding: 60px;
-    text-align: center;
-    background-color: black;
-    color: white;
-    border-radius: 25px;
-    position: relative;
-    top: 30px;
+.header {
+  padding: 60px;
+  text-align:center;
+  background-color: #ffffff;
+  opacity: 0.6;
+  color: black;
+  border-radius: 25px;
+  position: relative;
+  top: 30px;
 }
 
-.introducao-inicio{
-    margin: 10px;
-    font-size: large;
+.introducao-inicio {
+  margin: 0px;
+  font-size: large;
+  background-color: #ffffff;
+  padding: 1px;
+  border: 3px solid black;
+  margin: 1px;
+  height: 300px;
+  width: 300px;
+  margin: -250px 0px 0px 200px;
+  border-radius: 10px;
+  position: relative;
+  left: 575px;
+  bottom: 50px;
+  color: black;
+  text-align: center;
+  opacity: 0.6;
+  font-weight: bold;
 }
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
