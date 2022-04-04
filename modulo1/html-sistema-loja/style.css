@@ -1,0 +1,52 @@
+#insta-button{
+    height: 50px;
+    width: 50px;
+    margin: 20px 0px 0px 0px;
+}
+
+h1{
+    color: goldenrod;
+    padding: 60px;
+    text-align: center;
+    background-color: black;
+    font-size: 40px;
+}
+
+a{
+    display: inline-block;
+    margin: 50px 50px 0px 100px;
+}
+
+#icon{
+    margin: 20px 0px 0px 625px;
+}
+
+.texto-rodape{
+    font-size: small;
+    margin: 625px 0px 0px 600px;
+}
+
+.subheader {
+    font-size: large;
+    text-align: center;
+    color: red;
+}
+
+table, th, tr, td{
+    background-color:azure;
+    font-size: medium;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 200px;
+
+}
+
+h2{
+    text-align: center;
+    color: blue;
+    margin: 50px
+}
+
+div{
+    margin: 20px;
+}
