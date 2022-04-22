@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./styles.css";
 import axios from "axios";
-import PokeCard from "/src/Components/PokeCard.js"
+import PokeCard from "./PokeCard.js"
 
 
 const App = () => {
