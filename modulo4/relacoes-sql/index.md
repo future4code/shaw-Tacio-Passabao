@@ -18,3 +18,8 @@ b)  INSERT INTO MovieCast(movie_id, actor_id) VALUES( "001", "001" );
     INSERT INTO MovieCast(movie_id, actor_id) VALUES( "001", "008" );
 c) Não é possível relacionar um filme com um ator inexistente ou vice-versa
 d) DELETE FROM Actor WHERE id = "008" - Não é possível apagar, pois existem outras tabelas atreladas com a que estamos tentando apagar
+
+Exercício 3
+
+a)  Seleciona tudo da tabela do filme em conjunto com a tabela Rating em que o movie.id seja igual o rating.movie_id.]
+b)  SELECT title, Movie.id, rate FROM Movie INNER JOIN Rating ON Movie.id = Rating.movie_id;
