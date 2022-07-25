@@ -18,11 +18,9 @@ export interface UserAttributes {
 export interface UserCreationAttributes
   extends Optional<UserAttributes, "id"> {}
 
-export interface UserInstance
-  extends Model<UserAttributes, UserCreationAttributes>,
-    UserAttributes {
-  checkPassword: (password: string, callbackfn: CheckPasswordCallback) => void;
-}
+  export interface UserInstance extends Model<UserAttributes, UserCreationAttributes>, UserAttributes {
+    checkPassword: (password: string, callbackfn: CheckPasswordCallback) => void
+  }
 
 export const User = database.define<UserInstance, UserAttributes>(
   "users",

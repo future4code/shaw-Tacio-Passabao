@@ -1,3 +1,4 @@
+import { Op } from "sequelize/types";
 import { Course } from "../models";
 
 const courseService = {
