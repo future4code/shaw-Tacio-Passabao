@@ -1,36 +1,27 @@
-import AdminJs from 'adminjs'
-import AdminJsExpress from '@adminjs/express'
-import AdminJsSequelize from '@adminjs/sequelize'
-import { database } from '../database'
-import { adminJsResources } from '../adminjs/resources'
+import AdminJs from "adminjs";
+import AdminJsExpress from "@adminjs/express";
+import AdminJsSequelize from "@adminjs/sequelize";
+import { database } from "../database";
+import { adminJsResources } from "../adminjs/resources";
+import bcrypt from "bcrypt";
+import { locale } from "../adminjs/locale";
+import { Category, Course, Episode, User } from "../models";
+import { dashboardOptions } from "../adminjs/dashboard";
+import { brandingOptions } from "../adminjs/branding";
+import { authtenticationOptions } from "../adminjs/authentication";
 
-AdminJs.registerAdapter(AdminJsSequelize)
+AdminJs.registerAdapter(AdminJsSequelize);
 
 export const adminJs = new AdminJs({
   databases: [database],
   resources: adminJsResources,
-  rootPath: '/admin',
-  branding: {
-    companyName: 'OneBitFlix',
-    logo: '/onebitflix.svg',
-    theme: {
-      colors: {
-        primary100: '#ff0043',
-	      primary80: '#ff1a57',
-	      primary60: '#ff3369',
-	      primary40: '#ff4d7c',
-		    primary20: '#ff668f',
-	      grey100: '#151515',
-	      grey80: '#333333',
-	      grey60: '#4d4d4d',
-	      grey40: '#666666',
-	      grey20: '#dddddd',
-	      filterBg: '#333333',
-	      accent: '#151515',
-	      hoverBg: '#151515',
-      }
-    }
-  }
-})
+  rootPath: "/admin",
+  dashboard: dashboardOptions,
+  locale: locale,
+  branding: brandingOptions,
+});
 
-export const adminJsRouter = AdminJsExpress.buildRouter(adminJs)
+export const adminJsRouter = AdminJsExpress.buildAuthenticatedRouter(
+  adminJs,
+  authtenticationOptions
+);

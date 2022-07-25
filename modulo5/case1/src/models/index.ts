@@ -1,7 +1,7 @@
 import { Category } from './Category'
 import { Course } from './Course'
 import { Episode } from './Episode'
-import { User } from './User'
+import { User } from './user'
 
 Category.hasMany(Course)
 
