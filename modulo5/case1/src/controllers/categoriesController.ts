@@ -1,38 +1,42 @@
-import { Request, Response } from 'express'
-import { Category } from '../models'
+import { Request, Response } from "express";
+import { getPaginationParams } from "../helpers/getPaginationParams";
+import { categoryService } from "../services/categoryService";
 
-export const categoriesController = {
-    index: async (req: Request, res: Response) => {
-		const { page, perPage } = req.query
+const categoriesController = {
+  index: async (req: Request, res: Response) => {
+    const [page, perPage] = getPaginationParams(req.query);
 
-    const limit = typeof perPage === 'string' && parseInt(perPage, 10) > 0
-      ? parseInt(perPage, 10)
-      : 10
+    try {
+      const paginatedCategories = await categoryService.findAllPaginated(
+        page,
+        perPage
+      );
 
-    const pageNumber = typeof page === 'string' && parseInt(page, 10) > 0
-      ? parseInt(page, 10)
-      : 1
-
-		const offset = (pageNumber - 1) * limit
-
-        try {
-            const { count, rows } = await Category.findAndCountAll({
-                attributes: ['id', 'name', 'position'],
-                order: [['position', 'ASC']],
-                offset
-              })
-      
-            return res.json({
-              categories: rows,
-              page: pageNumber,
-              perPage: limit,
-              total: count
-            })
-          } catch (err) {
-          if (err instanceof Error) {
-            return res.status(400).json({ message: err.message })
-          }
-        }
+      return res.json(paginatedCategories);
+    } catch (err) {
+      if (err instanceof Error) {
+        return res.status(400).json({ message: err.message });
       }
-    
-}
+    }
+
+    // GET /categories/:id
+    show: async (req: Request, res: Response) => {
+      const { id } = req.params;
+    };
+  },
+  // GET /categories/:id
+  show: async (req: Request, res: Response) => {
+    const { id } = req.params;
+
+    try {
+      const category = await categoryService.findByIdWithCourses(id);
+      return res.json(category);
+    } catch (err) {
+      if (err instanceof Error) {
+        return res.status(400).json({ message: err.message });
+      }
+    }
+  },
+};
+
+export { categoriesController };
