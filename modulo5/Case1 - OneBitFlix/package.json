@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@splidejs/react-splide": "^0.7.8",
+    "aos": "^2.3.4"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.4"
+  }
+}
